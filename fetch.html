@@ -9,7 +9,7 @@
 	<section id="emp" style="display:flex;" >
 </section>
 	<script type="text/javascript">
-		fetch("https://reqres.in/api/users?page=2")
+	/*	fetch("https://reqres.in/api/users?page=2")
 		.then((res)=>{
 			console.log(res)
 			return res.json()
@@ -30,6 +30,45 @@
 
 			//block.innerHTML=employees[0].first_name
 		}
+		/*fetch("https://reqres.in/api/users/2")
+		.then((res)=>{
+			console.log(res)
+			return res.json()
+		})
+		.then((jsonResponse)=>{
+			console.log(jsonResponse.data)
+			display(jsonResponse.data)
+		})
+		function display(employees){
+			var block=document.getElementById("emp")
+			for (var i= 0; i<employees.length; i++) {
+				block.innerHTML+=
+				`<div>
+				<p>${employees[i].first_name}</p>
+				<img src ="${employees[i].avatar}"width="50%"/>
+				</div>`;
+			}
+
+			//block.innerHTML=employees[0].first_name
+		}*/
+		fetch("https://reqres.in/api/users",{
+			method:"post",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body:JSON.stringify({name:"usha",age:19,gender:"female"})
+		})
+		.then((res)=>{
+			console.log(res)
+			if(res.status===201){
+				alert("data added sucessfully")
+			}
+			return res.json()
+		})
+		.then((update)=>{
+			console.log(update)
+		})
+
 	</script>
 	</body>
 	</html>
