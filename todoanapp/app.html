@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.listtype{
+			list-style: none;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/49b355655c.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function todo(){
+		let newTodo=document.getElementById("new").value,todoList=[]
+        if(newTodo===""){
+        	alert("enter a todo value")
+        }
+        else{
+        	add(newTodo)
+        }
+		//console.log(newTodo)
+		document.getElementById("new").value=""
+		
+		}
+		function add(newvalue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`
+			<span class="listvalue">${newvalue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>`
+			li.classList.add("listtype")
+			ul.appendchild(li)
+		}
+	</script>
+
+</head>
+<body>
+	<input type="text" id="new"placeholder="enter your name"/>
+	<ul>
+		
+	</ul>
+   
+	<button onclick="todo()">click</button>
+
+</body>
+</html>
