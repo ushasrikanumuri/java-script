@@ -5,11 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style type="text/css">
+	   .body{
+	   	background-image: linear-gradient(to right, #605e7e, #6b73c1, #37b3cc);
+	   }
 		.listtype{
 			list-style: none;
+			background-image:5213862.webp ;
 		}
 	</style>
 	<script src="https://kit.fontawesome.com/49b355655c.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+	<input type="text" id="new"placeholder="enter your name"/>
+	<ul>
+		
+	</ul>
+   
+	<button onclick="todo()">click</button>
 	<script type="text/javascript">
 		function todo(){
 		let newTodo=document.getElementById("new").value,todoList=[]
@@ -31,18 +44,10 @@
 			<span class="listvalue">${newvalue}</span>
 			<i class="fa-solid fa-rectangle-xmark"></i>`
 			li.classList.add("listtype")
-			ul.appendchild(li)
+			ul.appendChild(li)
 		}
 	</script>
 
-</head>
-<body>
-	<input type="text" id="new"placeholder="enter your name"/>
-	<ul>
-		
-	</ul>
-   
-	<button onclick="todo()">click</button>
-
+ 
 </body>
 </html>
